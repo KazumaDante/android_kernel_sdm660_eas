@@ -180,6 +180,17 @@ static int __init vdso_init(void)
 
 	return 0;
 }
+
+static struct vdso_mappings vdso_mappings __ro_after_init;
+
+static int __init vdso_init(void)
+{
+	extern char vdso_start[], vdso_end[];
+
+	return vdso_mappings_init("vdso", vdso_start, vdso_end,
+				  &vdso_mappings);
+}
+
 arch_initcall(vdso_init);
 
 int arch_setup_additional_pages(struct linux_binprm *bprm,
@@ -210,16 +221,19 @@ int arch_setup_additional_pages(struct linux_binprm *bprm,
 	ret = _install_special_mapping(mm, vdso_base, vdso_text_len,
 				       VM_READ|VM_EXEC|
 				       VM_MAYREAD|VM_MAYWRITE|VM_MAYEXEC,
-				       &vdso_spec[1]);
-	if (IS_ERR(ret))
-		goto up_fail;
+				       &mappings->code_mapping);
+	if (!IS_ERR(ret))
+		mm->context.vdso = (void *)vdso_base;
+	return PTR_ERR_OR_ZERO(ret);
+}
 
+int arch_setup_additional_pages(struct linux_binprm *bprm, int uses_interp)
+{
+	struct mm_struct *mm = current->mm;
+	int ret;
 
-	up_write(&mm->mmap_sem);
-	return 0;
-
-up_fail:
-	mm->context.vdso = NULL;
+	down_write(&mm->mmap_sem);
+	ret = vdso_setup(mm, &vdso_mappings);
 	up_write(&mm->mmap_sem);
 	return PTR_ERR(ret);
 }
