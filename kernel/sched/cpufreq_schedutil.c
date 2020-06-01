@@ -80,7 +80,7 @@ struct sugov_cpu {
 	unsigned long util;
 	unsigned long max;
 	unsigned int flags;
-//unsigned int cpu;
+	unsigned int cpu;
 
 	/* The field below is for single-CPU policies only. */
 #ifdef CONFIG_NO_HZ_COMMON
