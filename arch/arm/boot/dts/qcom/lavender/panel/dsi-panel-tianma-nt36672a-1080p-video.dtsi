@@ -17,7 +17,7 @@
 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
 		qcom,mdss-dsi-panel-framerate = <71>;
-		qcom,mdss-dsi-min-refresh-rate = <70>;
+		qcom,mdss-dsi-min-refresh-rate = <71>;
 		qcom,mdss-dsi-virtual-channel-id = <0>;
 		qcom,mdss-dsi-stream = <0>;
 		qcom,mdss-dsi-panel-width = <1080>;
@@ -39,7 +39,7 @@
 		qcom,mdss-dsi-underflow-color = <0xff>;
 		qcom,mdss-dsi-border-color = <0>;
 		qcom,mdss-dsi-h-sync-pulse = <0>;
-		qcom,mdss-dsi-traffic-mode = "non_burst_sync_pulse";
+		qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
 		qcom,mdss-dsi-bllp-eof-power-mode;
 		qcom,mdss-dsi-bllp-power-mode;
 		qcom,mdss-dsi-lane-0-state;
@@ -382,7 +382,7 @@
 		qcom,mdss-tear-check-sync-threshold-continue = <4>;
 		qcom,mdss-tear-check-start-pos = <2340>;
 		qcom,mdss-tear-check-rd-ptr-trigger-intr = <2341>;
-		qcom,mdss-tear-check-frame-rate = <7100>;
+		qcom,mdss-tear-check-frame-rate = <7199>;
 		qcom,mdss-dsi-panel-status-command = [06 01 00 01 05 00 01 0A];
 		qcom,mdss-dsi-panel-status-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-panel-status-check-mode = "reg_read";
