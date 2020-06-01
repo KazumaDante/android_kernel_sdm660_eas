@@ -16,7 +16,7 @@
 		qcom,mdss-dsi-panel-name = "tianma nt36672 fhd video mode dsi panel";
 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
-		qcom,mdss-dsi-panel-framerate = <60>;
+		qcom,mdss-dsi-panel-framerate = <71>;
 		qcom,mdss-dsi-virtual-channel-id = <0>;
 		qcom,mdss-dsi-stream = <0>;
 		qcom,mdss-dsi-panel-width = <1080>;
@@ -38,7 +38,7 @@
 		qcom,mdss-dsi-underflow-color = <0xff>;
 		qcom,mdss-dsi-border-color = <0>;
 		qcom,mdss-dsi-h-sync-pulse = <0>;
-		qcom,mdss-dsi-traffic-mode = "burst_mode";
+		qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
 		qcom,mdss-dsi-bllp-eof-power-mode;
 		qcom,mdss-dsi-bllp-power-mode;
 		qcom,mdss-dsi-lane-0-state;
@@ -972,7 +972,14 @@
 		qcom,mdss-dsi-tx-eot-append;
 		qcom,mdss-dsi-post-init-delay = <1>;
 
-		/*qcom,esd-check-enabled;*/
+    qcom,mdss-dsi-te-check-enable;
+		qcom,mdss-tear-check-sync-cfg-height = <0xfff0>;
+		qcom,mdss-tear-check-sync-init-val = <2340>;
+		qcom,mdss-tear-check-sync-threshold-start = <4>;
+		qcom,mdss-tear-check-sync-threshold-continue = <4>;
+		qcom,mdss-tear-check-start-pos = <2340>;
+		qcom,mdss-tear-check-rd-ptr-trigger-intr = <2341>;
+		qcom,mdss-tear-check-frame-rate = <7199>;
 		qcom,mdss-dsi-panel-hdr-enabled;
 		qcom,mdss-dsi-panel-hdr-color-primaries = <14500 15500 32000
 			17000 15500 30000 8000 3000>;
