@@ -280,8 +280,12 @@
 
 /* sdm660-mdss-panels */
 #include "panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi"
+#include "dsi-panel-tianma-nt36672-1080p-video.dtsi"
+#include "dsi-panel-tianma-e7t-nt36672a-1080p-video.dtsi"
+#include "dsi-panel-tianma-td4310-1080p-video.dtsi"
 #include "panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi"
 #include "panel/dsi-panel-boe-td4320-1080p-video.dtsi"
+#include "dsi-panel-boe-e7t-ft8719-1080p-video.dtsi"
 
 &dsi_panel_pwr_supply {
 	qcom,panel-supply-entry@0 {
@@ -295,14 +299,44 @@
 
 };
 
+&dsi_nt36672_tianma_fhd_video {
+	qcom,mdss-dsi-panel-timings-phy-v2 = [25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1e 08 0a 06 03 04 a0];
+	qcom,mdss-dsi-min-refresh-rate = <65>;
+	qcom,mdss-dsi-max-refresh-rate = <71>;
+};
+
 &dsi_nt36672a_tianma_fhdplus_video {
         qcom,mdss-dsi-panel-timings-phy-v2 = [26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
-	qcom,mdss-dsi-min-refresh-rate = <48>;
-        qcom,mdss-dsi-max-refresh-rate = <60>;
+	qcom,mdss-dsi-min-refresh-rate = <65>;
+        qcom,mdss-dsi-max-refresh-rate = <71>;
+};
+
+&dsi_td4310_tianma_fhd_video {
+	qcom,mdss-dsi-panel-timings-phy-v2 = [25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1f 09 0a 06 03 04 a0
+		25 1f 08 0a 06 03 04 a0];
+	qcom,mdss-dsi-min-refresh-rate = <65>;
+	qcom,mdss-dsi-max-refresh-rate = <71>;
+};
+
+&dsi_nt36672a_tianma_fhdplus_video {
+        qcom,mdss-dsi-panel-timings-phy-v2 = [26 21 09 0b 06 03 04 a0
+               26 21 09 0b 06 03 04 a0
+               26 21 09 0b 06 03 04 a0
+               26 21 09 0b 06 03 04 a0
+               26 20 0a 0b 06 03 04 a0];
+	qcom,mdss-dsi-min-refresh-rate = <65>;
+        qcom,mdss-dsi-max-refresh-rate = <71>;
 };
 
 &dsi_nt36672a_shenchao_fhdplus_video {
@@ -323,6 +357,16 @@
                26 20 0a 0b 06 03 04 a0];
 	qcom,mdss-dsi-min-refresh-rate = <48>;
         qcom,mdss-dsi-max-refresh-rate = <60>;
+};
+
+&dsi_ft8719_e7t_boe_fhdplus_video {
+        qcom,mdss-dsi-panel-timings-phy-v2 = [26 21 09 0b 06 03 04 a0
+                26 21 09 0b 06 03 04 a0
+                26 21 09 0b 06 03 04 a0
+                26 21 09 0b 06 03 04 a0
+                26 20 0a 0b 06 03 04 a0];
+        qcom,mdss-dsi-min-refresh-rate = <60>;
+        qcom,mdss-dsi-max-refresh-rate = <61>;
 };
 
 /* sdm660-mtp */
@@ -413,7 +457,7 @@
 		pinctrl-0 = <&ant_check_default>;
 	};
 };
-	
+
 &i2c_2 {
 	status = "disabled";
 };
@@ -757,4 +801,3 @@
 &qcom_seecom {
 	qcom,qsee-reentrancy-support = <0>;
 };
-

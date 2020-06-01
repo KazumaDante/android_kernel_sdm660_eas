@@ -2419,7 +2419,7 @@ static int mdss_dsi_set_refresh_rate_range(struct device_node *pan_node,
 	rc = of_property_read_u32(pan_node,
 			"qcom,mdss-dsi-min-refresh-rate",
 			&temp);
-	pinfo->min_fps = 30;
+	pinfo->min_fps = 24;
 	if (rc) {
 		pr_warn("%s:%d, Unable to read min refresh rate\n",
 				__func__, __LINE__);
