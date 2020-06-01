@@ -280,11 +280,12 @@
 
 /* sdm660-mdss-panels */
 #include "panel/dsi-panel-tianma-nt36672a-1080p-video.dtsi"
-#include "dsi-panel-tianma-e7t-nt36672a-1080p-video.dtsi"
-#include "dsi-panel-tianma-td4310-1080p-video.dtsi"
+#include "panel/dsi-panel-tianma-nt36672-1080p-video.dtsi"
+#include "panel/dsi-panel-tianma-e7t-nt36672a-1080p-video.dtsi"
+#include "panel/dsi-panel-tianma-td4310-1080p-video.dtsi"
 #include "panel/dsi-panel-shenchao-nt36672a-1080p-video.dtsi"
 #include "panel/dsi-panel-boe-td4320-1080p-video.dtsi"
-#include "dsi-panel-boe-e7t-ft8719-1080p-video.dtsi"
+#include "panel/dsi-panel-boe-e7t-ft8719-1080p-video.dtsi"
 
 &dsi_panel_pwr_supply {
 	qcom,panel-supply-entry@0 {
