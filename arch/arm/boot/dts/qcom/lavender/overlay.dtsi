@@ -301,8 +301,8 @@
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
-	qcom,mdss-dsi-min-refresh-rate = <48>;
-        qcom,mdss-dsi-max-refresh-rate = <60>;
+	qcom,mdss-dsi-min-refresh-rate = <56>;
+        qcom,mdss-dsi-max-refresh-rate = <68>;
 };
 
 &dsi_nt36672a_shenchao_fhdplus_video {
@@ -321,7 +321,7 @@
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
-	qcom,mdss-dsi-min-refresh-rate = <48>;
+	qcom,mdss-dsi-min-refresh-rate = <60>;
         qcom,mdss-dsi-max-refresh-rate = <60>;
 };
 
@@ -365,7 +365,7 @@
 &dsi_td4320_boe_fhdplus_video {
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_wled";
 	qcom,mdss-dsi-bl-min-level = <1>;
-	qcom,mdss-dsi-bl-max-level = <4095>;
+	qcom,mdss-dsi-bl-max-level = <4000>;
 	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
 };
 
@@ -413,7 +413,7 @@
 		pinctrl-0 = <&ant_check_default>;
 	};
 };
-	
+
 &i2c_2 {
 	status = "disabled";
 };
@@ -757,4 +757,3 @@
 &qcom_seecom {
 	qcom,qsee-reentrancy-support = <0>;
 };
-
