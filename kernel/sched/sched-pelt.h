@@ -25,19 +25,21 @@ static const u32 runnable_avg_yN_sum[] = {
 
 #ifdef CONFIG_PELT_UTIL_HALFLIFE_16
 static const u32 runnable_avg_yN_inv[] = {
-        0xffffffff,0xf5257d14,0xeac0c6e6,0xe0ccdeeb,
-        0xd744fcc9,0xce248c14,0xc5672a10,0xbd08a39e,
-        0xb504f333,0xad583ee9,0xa5fed6a9,0x9ef5325f,
-        0x9837f050,0x91c3d373,0x8b95c1e3,0x85aac367,
+	0xffffffff,0xf5257d14,0xeac0c6e6,0xe0ccdeeb,
+	0xd744fcc9,0xce248c14,0xc5672a10,0xbd08a39e,
+	0xb504f333,0xad583ee9,0xa5fed6a9,0x9ef5325f,
+	0x9837f050,0x91c3d373,0x8b95c1e3,0x85aac367,
 };
 
 static const u32 runnable_avg_yN_sum[] = {
-	    0,  980, 1919, 2818, 3679, 4503, 5292, 6048, 6772, 7465, 8129,
-	 8764, 9373, 9956,10514,11048,11560,
+	    0,22380,22411,22441,22470,22497,22523,22548,22572,22595,22617,
+	22638,22658,22677,22696,22714,22731,
 };
 
 #define LOAD_AVG_PERIOD 16
-#define LOAD_AVG_MAX 24130
+#define LOAD_AVG_MAX 24152
+#define LOAD_AVG_MAX_N 517
+
 #endif
 
 #ifdef CONFIG_PELT_UTIL_HALFLIFE_8
