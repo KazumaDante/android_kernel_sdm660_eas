@@ -2191,9 +2191,9 @@ static int cpufreq_governor(struct cpufreq_policy *policy, unsigned int event)
 	   That this is the case is already ensured in Kconfig
 	*/
 #ifdef CONFIG_CPU_FREQ_GOV_PERFORMANCE
-	struct cpufreq_governor *gov = &cpufreq_gov_performance;
+	struct cpufreq_governor *gov = &cpufreq_gov_schedutil;
 #else
-	struct cpufreq_governor *gov = NULL;
+	struct cpufreq_governor *gov = &cpufreq_gov_schedutil;
 #endif
 
 	/* Don't start any governor operations if we are entering suspend */
