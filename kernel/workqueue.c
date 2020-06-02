@@ -1373,6 +1373,7 @@ static void __queue_work(int cpu, struct workqueue_struct *wq,
 	if (req_cpu == WORK_CPU_UNBOUND)
 		cpu = 0;
 retry:
+
 	if (req_cpu == WORK_CPU_UNBOUND)
 		cpu = raw_smp_processor_id();
 
