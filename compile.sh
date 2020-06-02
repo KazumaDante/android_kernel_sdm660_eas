@@ -1,6 +1,7 @@
 #################
 #  Kazu-Kernel  #
 #     EAS       #
+#     R10       #
 #################
 # Clean out folder
 rm -rf '/media/system/root1/android_kernel_sdm660_eas/out'
