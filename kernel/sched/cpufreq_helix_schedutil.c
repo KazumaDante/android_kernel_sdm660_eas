@@ -29,15 +29,15 @@ unsigned long boosted_cpu_util(int cpu);
 #define cpufreq_enable_fast_switch(x)
 #define cpufreq_disable_fast_switch(x)
 
-#define UP_RATE_LIMIT				1000
-#define DOWN_RATE_LIMIT				2000
+#define UP_RATE_LIMIT				500
+#define DOWN_RATE_LIMIT				200000
 #define BIT_SHIFT_1 				8
 #define BIT_SHIFT_2 				8
 #define TARGET_LOAD_1				30
 #define TARGET_LOAD_2				70
 
-#define UP_RATE_LIMIT_BIGC			2000
-#define DOWN_RATE_LIMIT_BIGC		4000
+#define UP_RATE_LIMIT_BIGC			400
+#define DOWN_RATE_LIMIT_BIGC		40000
 #define BIT_SHIFT_1_BIGC 			10
 #define BIT_SHIFT_2_BIGC 			8
 #define TARGET_LOAD_1_BIGC 			28
