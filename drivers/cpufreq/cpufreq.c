@@ -1155,8 +1155,8 @@ static int cpufreq_init_policy(struct cpufreq_policy *policy)
 	if (gov)
 		pr_debug("Restoring governor %s for cpu %d\n",
 				policy->governor->name, policy->cpu);
-	//else
-		//gov = CPUFREQ_DEFAULT_GOVERNOR;
+	else
+		gov = CPU_FREQ_DEFAULT_GOV_SCHEDUTIL;
 
 	new_policy.governor = gov;
 
