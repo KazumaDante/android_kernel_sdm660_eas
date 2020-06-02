@@ -530,10 +530,10 @@ void cpufreq_unregister_governor(struct cpufreq_governor *governor);
  * load due latency restrictions
  */
 #ifdef CONFIG_CPU_FREQ_GOV_PERFORMANCE
-extern struct cpufreq_governor cpufreq_gov_schedutil;
+extern struct cpufreq_governor cpufreq_gov_performance;
 #endif
-#ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL
-#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_schedutil)
+#ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_performance)
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SCHED)
 extern struct cpufreq_governor cpufreq_gov_sched;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_sched)
