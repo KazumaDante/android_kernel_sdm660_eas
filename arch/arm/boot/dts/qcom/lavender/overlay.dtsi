@@ -301,8 +301,10 @@
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
-	qcom,mdss-dsi-min-refresh-rate = <57>;
-        qcom,mdss-dsi-max-refresh-rate = <69>;
+	qcom,mdss-dsi-min-refresh-rate = <60>;
+  qcom,mdss-dsi-max-refresh-rate = <68>;
+  qcom,mdss-tear-check-frame-rate = <6800>;
+  qcom,mdss-dsi-pan-enable-dynamic-fps;
 };
 
 &dsi_nt36672a_shenchao_fhdplus_video {
