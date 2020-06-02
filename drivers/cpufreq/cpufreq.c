@@ -1156,7 +1156,7 @@ static int cpufreq_init_policy(struct cpufreq_policy *policy)
 		pr_debug("Restoring governor %s for cpu %d\n",
 				policy->governor->name, policy->cpu);
 	else
-		gov = CPU_FREQ_DEFAULT_GOV_SCHEDUTIL;
+		gov = CPUFREQ_DEFAULT_GOVERNOR;
 
 	new_policy.governor = gov;
 
@@ -2191,9 +2191,9 @@ static int cpufreq_governor(struct cpufreq_policy *policy, unsigned int event)
 	   That this is the case is already ensured in Kconfig
 	*/
 #ifdef CONFIG_CPU_FREQ_GOV_PERFORMANCE
-	struct cpufreq_governor *gov = &cpufreq_gov_schedutil;
+	struct cpufreq_governor *gov = &cpufreq_gov_performance;
 #else
-	struct cpufreq_governor *gov = &cpufreq_gov_schedutil;
+	struct cpufreq_governor *gov = NULL;
 #endif
 
 	/* Don't start any governor operations if we are entering suspend */
