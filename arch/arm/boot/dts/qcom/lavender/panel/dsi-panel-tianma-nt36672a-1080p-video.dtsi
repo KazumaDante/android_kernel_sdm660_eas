@@ -17,7 +17,7 @@
 		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
 		qcom,mdss-dsi-panel-framerate = <68>;
-    qcom,mdss-dsi-min-refresh-rate = <60>;
+    qcom,mdss-dsi-min-refresh-rate = <55>;
     qcom,mdss-dsi-max-refresh-rate = <68>;
 		qcom,mdss-dsi-virtual-channel-id = <0>;
 		qcom,mdss-dsi-stream = <0>;
@@ -383,7 +383,7 @@
 		qcom,mdss-tear-check-sync-threshold-continue = <4>;
 		qcom,mdss-tear-check-start-pos = <2340>;
 		qcom,mdss-tear-check-rd-ptr-trigger-intr = <2341>;
-		qcom,mdss-tear-check-frame-rate = <6800>;
+		qcom,mdss-tear-check-frame-rate = <6825>;
 		qcom,mdss-dsi-panel-status-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-panel-status-check-mode = "reg_read";
 		qcom,mdss-dsi-panel-status-read-length = <1>;
@@ -396,7 +396,6 @@
 		qcom,mdss-dsi-panel-blackness-level = <3230>;
 		qcom,panel-ack-disabled;
 		qcom,ulps-enabled;
-		qcom,suspend-ulps-enabled;
 		qcom,mdss-dsi-pan-enable-dynamic-fps;
 		qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
 		qcom,partial-update-enabled = "single_roi";
