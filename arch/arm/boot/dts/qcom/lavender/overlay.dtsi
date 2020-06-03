@@ -301,8 +301,8 @@
                26 21 09 0b 06 03 04 a0
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
-	qcom,mdss-dsi-min-refresh-rate = <57>;
-        qcom,mdss-dsi-max-refresh-rate = <69>;
+	qcom,mdss-dsi-min-refresh-rate = <60>;
+        qcom,mdss-dsi-max-refresh-rate = <68>;
 };
 
 &dsi_nt36672a_shenchao_fhdplus_video {
@@ -322,7 +322,10 @@
                26 21 09 0b 06 03 04 a0
                26 20 0a 0b 06 03 04 a0];
 	qcom,mdss-dsi-min-refresh-rate = <60>;
-        qcom,mdss-dsi-max-refresh-rate = <60>;
+  qcom,mdss-dsi-max-refresh-rate = <61>;
+  qcom,mdss-dsi-pan-enable-dynamic-fps;
+  qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+  qcom,mdss-dsi-dynamic-bitclk_freq = <798240576 801594528 804948480 808302432 811656384>;      
 };
 
 /* sdm660-mtp */
