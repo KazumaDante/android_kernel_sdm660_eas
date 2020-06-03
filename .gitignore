@@ -52,6 +52,8 @@ Module.symvers
 /vmlinuz
 /System.map
 /Module.markers
+/out
+out
 
 #
 # Debian directory (make deb-pkg)
@@ -75,6 +77,8 @@ Module.symvers
 include/config
 include/generated
 arch/*/include/generated
+out/
+out 
 
 # stgit generated dirs
 patches-*
