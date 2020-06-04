@@ -2530,8 +2530,8 @@ static struct notifier_block __refdata cpufreq_cpu_notifier = {
 	.notifier_call = cpufreq_cpu_callback,
 };
 
-static int cluster_0[2] = {0,1};
-static int cluster_1[2] = {2,3};
+static int cluster_0[4] = {0,1,2,3};
+static int cluster_1[4] = {4,5,6,7};
 static int cluster_0_ucfreq=CONFIG_CPU_UNDERCLOCK_FREQ_LP;
 static int cluster_1_ucfreq=CONFIG_CPU_UNDERCLOCK_FREQ_HP;
 static int cluster_0_lastfreq;
@@ -2552,14 +2552,14 @@ static inline int cpufreq_underclock_check_cluster(int cpu)
 	if (cluster_0[i] == cpu)
 		return 0;
 	}
-	
+
 	//HP
 	length = sizeof(cluster_1)/sizeof(int);
 	for (i=0;i<length;i++){
 	if (cluster_1[i] == cpu)
 		return 1;
 	}
-	
+
 	return -EINVAL;
 }
 static inline void cpufreq_underclock_set(int cluster,struct cpufreq_policy *policy,bool underclock)
@@ -2607,7 +2607,7 @@ int trigger_cpufreq_underclock(void)
 		cpufreq_underclock_set(cpufreq_underclock_check_cluster(policy->cpu),policy,true);
 		__cpufreq_governor(policy, CPUFREQ_GOV_STOP);
 		__cpufreq_governor(policy, CPUFREQ_GOV_START);
-		
+
 	}
 	underclocked=true;
 	return 0;
@@ -2621,7 +2621,7 @@ int resume_cpufreq_underclock(void)
 		cpufreq_underclock_set(cpufreq_underclock_check_cluster(policy->cpu),policy,false);
 		__cpufreq_governor(policy, CPUFREQ_GOV_STOP);
 		__cpufreq_governor(policy, CPUFREQ_GOV_START);
-		
+
 	}
 	underclocked=false;
 	return 0;
