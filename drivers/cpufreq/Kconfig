@@ -102,7 +102,7 @@ config CPU_UNDERCLOCK_FREQ_LP
 	int "Low-power cluster underclock freq"
 	default "0"
 	help
-		 CPU underclock frequency for the low-power CPU cluster.		
+		CPU underclock frequency for the low-power CPU cluster.		
 
 comment "CPU frequency scaling drivers"
 
