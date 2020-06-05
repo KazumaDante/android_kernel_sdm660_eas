@@ -236,9 +236,15 @@ EXPORT_SYMBOL_GPL(get_cpu_idle_time);
 int cpufreq_generic_init(struct cpufreq_policy *policy,
 		struct cpufreq_frequency_table *table,
 		unsigned int transition_latency)
-
 {
-  policy->freq_table = table;
+	int ret;
+
+	ret = cpufreq_table_validate_and_show(policy, table);
+	if (ret) {
+		pr_err("%s: invalid frequency table: %d\n", __func__, ret);
+		return ret;
+	}
+
 	policy->cpuinfo.transition_latency = transition_latency;
 
 	/*
