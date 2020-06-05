@@ -305,27 +305,12 @@ int cpufreq_table_validate_and_show(struct cpufreq_policy *policy,
 {
 	int ret = cpufreq_frequency_table_cpuinfo(policy, table);
 
-	if (ret)
-	        return ret;
+	if (!ret)
+		policy->freq_table = table;
 
-	policy->freq_table = table;
-	return 0;
+	return ret;
 }
 EXPORT_SYMBOL_GPL(cpufreq_table_validate_and_show);
-
-int cpufreq_table_validate_and_sort(struct cpufreq_policy *policy)
-{
-	int ret;
-
-	if (!policy->freq_table)
-		return 0;
-
-	ret = cpufreq_frequency_table_cpuinfo(policy, policy->freq_table);
-	if (ret)
-		return ret;
-
-	return set_freq_table_sorted(policy);
-}
 
 MODULE_AUTHOR("Dominik Brodowski <linux@brodo.de>");
 MODULE_DESCRIPTION("CPUfreq frequency table helpers");
