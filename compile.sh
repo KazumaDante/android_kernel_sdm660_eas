@@ -36,7 +36,7 @@ make O=$out ARCH=arm64 \
 CC="/media/system/root1/android_prebuilts_clang_host_linux-x86_clang-6364210/bin/clang" \
 CLANG_TRIPLE=aarch64-linux-gnu- \
 CROSS_COMPILE="/media/system/root1/aarch64-linux-android-4.9/bin/aarch64-linux-android-" \
-CROSS_COMPILE_ARM32="/media/system/root1/aarch64-linux-android-4.9/bin/arm-linux-androideabi" \
+CROSS_COMPILE_ARM32="/media/system/root1/aarch64-linux-android-4.9/bin/arm-linux-androideabi-" \
 -j$(nproc --all) Image.gz-dtb
 DATE_END=$(date +"%s")
 DIFF=$(($DATE_END - $DATE_START))
